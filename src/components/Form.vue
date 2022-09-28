@@ -41,7 +41,7 @@ window.location.reload();
   <div class="form-row">
     <div class="form-group col-md-12">
         <label for="firstName" class="form-label">First name</label>
-      <input type="text" class="form-control" id="firstName" placeholder="First Name" required >
+      <input type="text" class="form-control" id="firstName" placeholder="First Name" required autocomplete="off" >
       <div class="valid-feedback">
       Looks good!
     </div>
@@ -51,15 +51,15 @@ window.location.reload();
     </div>
     <div class="form-group col-md-12">
       <label for="lastName">Last Name</label>
-      <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+      <input type="text" class="form-control" id="lastName" placeholder="Last Name" required autocomplete="off">
     </div>
     <div class="form-group col-md-8">
     <label for="address">Address</label>
-    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required autocomplete="off">
   </div>
     <div class="form-group col-md-12">
       <label for="dateOfBirth">Date Of Birth</label>
-      <input type="date" class="form-control" id="dateOfBirth" placeholder="Last Name">
+      <input type="date" class="form-control" id="dateOfBirth" placeholder="Last Name" autocomplete="off">
     </div>
   </div>
   

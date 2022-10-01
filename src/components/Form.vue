@@ -29,7 +29,12 @@ emit('response', data)
 localStorage.setItem("data",JSON.stringify(data))
 window.location.reload();
 }
-
+const checkValidity = (event) =>{
+  console.log(event.target.validity)
+  if(!event.target.validity){
+    e.target.setCustomValidity("Please input data without special characters or digits");
+  }
+}
 </script>
 
 <template>
@@ -39,19 +44,16 @@ window.location.reload();
   
   <form class="form-horizontal col-12  col-offset-12"  @submit.prevent="handleSubmit" ref="form">
   <div class="form-row">
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-12 mb-2">
         <label for="firstName" class="form-label">First name</label>
-      <input type="text" class="form-control" id="firstName" placeholder="First Name" required autocomplete="off" >
-      <div class="valid-feedback">
-      Looks good!
+      <input type="text" class="form-control" id="firstName" placeholder="First Name" required autocomplete="off" @change="checkValidity" pattern="[A-Za-z]+">
+      <small  class="form-text text-muted">Please don't use special characters or digits</small>
+    
     </div>
-    <div id="validationServer01" class="invalid-feedback">
-        Please write first name.
-      </div>
-    </div>
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-12 mb-2">
       <label for="lastName">Last Name</label>
-      <input type="text" class="form-control" id="lastName" placeholder="Last Name" required autocomplete="off">
+      <input type="text" class="form-control" id="lastName" placeholder="Last Name" required autocomplete="off" @change="checkValidity" pattern="[A-Za-z]+">
+      <small  class="form-text text-muted">Please don't use special characters or digits</small>
     </div>
     <div class="form-group col-md-8">
     <label for="address">Address</label>
